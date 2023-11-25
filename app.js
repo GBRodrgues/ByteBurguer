@@ -1,41 +1,63 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+/*comandos npm
+npm init
+npm instal nodemon -g 
+npm install -- save express
+npm install express-session
+npm install --save body-parser
+npm install --save mysql
+npm install ejs -save
+*/
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//require do express e do session
+const express = require("express");
+const session = require("express-session");
+const path = require("path");
+const app = express();
 
-var app = express();
+//require do bodyparser responsável por capturar valores do form
+const bodyParser = require("body-parser");
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//require do mysql
+const mysql = require("mysql");
+const { resolveSoa } = require("dns");
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+//criando a sessão
+app.use(session({ secret: "ssshhhhh" }));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//definindo pasta pública para acesso
+app.use(express.static("public"));
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+//config engines
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "/public"));
+
+//config bodyparser para leitura de post
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+//conexão com banco mysql
+function conectiondb() {
+  var con = mysql.createConnection({
+    host: "localhost", // O host do banco. Ex: localhost
+    user: "gabriel", // Um usuário do banco. Ex: user
+    password: "1234", // A senha do usuário. Ex: user123
+    database: "hamburgueria", // A base de dados a qual a aplicação irá se conectar, deve ser a mesma onde foi executado o Código 1. Ex: node_mysql
+  });
+
+  //verifica conexao com o banco
+  con.connect((err) => {
+    if (err) {
+      console.log("Erro connecting to database...", err);
+      return;
+    }
+    console.log("Connection established!");
+  });
+
+  return con;
+}
+
+//rota para login
+app.get("/views/login", function (req, res) {
+  var message = " ";
+  res.render("views/login", { message: message });
 });
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
