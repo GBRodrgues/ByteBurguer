@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: whitesmoke;
+  padding: 6px;
+  width: 35%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 darkgrey;
+}
+
+form {
+  position: absolute;
+  margin-top: 80px;
+  transition: 0.5s;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+.buttonsForm {
+  margin-top: 40px;
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0 0 7px 0 #ffc609;
+}
+
+.buttonsForm button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: relative;
+  padding: 10px 29px;
+}
+
+.btnColor {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, #ffc609, #f8e763);
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: none;
+  border-radius: 60px;
+  padding: 8px 0 8px 35px;
+  outline: none;
+  width: 80%;
+}
+
+button[type="submit"] {
+  background: #ffc609;
+  color: white;
+  border-radius: 30px;
+  width: 90%;
+  border: none;
+  outline: none;
+  padding-block: 15px;
+
+  font-size: 15px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.divCheck {
+  margin: 10px 0 0 5px;
+  width: 80%;
+  font-size: 13px;
+}
+
+#signin {
+  left: 25px;
+}
+
+#signup {
+  left: 450px;
+  height: 600px;
+}
+
+i {
+  position: absolute;
+  left: 0;
+  padding: 10px 10px;
+}
+
+.iEmail {
+  top: 40px;
+}
+
+.iPasswordLogin {
+  top: 114px;
+}
+
+.iPassword1 {
+  top: 190px;
+}
+.iPassword2 {
+  top: 190px;
+}
+
+.iNome {
+  top: 150px;
+}

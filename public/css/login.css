@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
   background-color: whitesmoke;
   padding: 6px;
   width: 350px;
-  height: 450px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +32,7 @@ body {
 form {
   position: absolute;
   margin-top: 80px;
-  transition: .5s;
+  transition: 0.5s;
   width: 300px;
   height: 400px;
 }
@@ -58,10 +58,11 @@ form {
   height: 100%;
   background: linear-gradient(to right, #ffc609, #f8e763);
   border-radius: 30px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"] {
   border: none;
   margin-top: 40px;
   border-radius: 60px;
@@ -95,6 +96,7 @@ button[type="submit"] {
 
 #signup {
   left: 450px;
+  height: 600px;
 }
 
 i {
@@ -107,10 +109,18 @@ i {
   top: 40px;
 }
 
-.iPassword {
+.iPasswordLogin {
   top: 114px;
 }
 
-.iPassword2 {
+.iPassword {
   top: 190px;
+}
+
+.iPassword2 {
+  top: 268px;
+}
+
+.iNome {
+  top: 114px;
 }
