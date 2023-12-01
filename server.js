@@ -1,13 +1,9 @@
 var express = require("express");
 const session = require("express-session");
 const mysql = require("mysql");
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "hamburgueria",
-});
-
+var connection_data = require("./connections.json");
+const connection = mysql.createConnection(connection_data);
+const { createHash } = require("crypto");
 var app = express();
 
 // set the view engine to ejs
@@ -38,36 +34,56 @@ app.get("/home", function (req, res) {
 
 // database auth
 app.post("/auth", function (req, res) {
-  // Capture the input fields
-  let username = req.body.email;
+  let email = req.body.email;
   let password = req.body.senha;
-  // Ensure the input fields exists and are not empty
-  if (username && password) {
-    // Execute SQL query that'll select the account from the database based on the specified username and password
+  let cripted_pass = hash(email + password);
+
+  if (email && password) {
     connection.query(
       "SELECT * FROM usuario WHERE email = ? AND senha = ?",
-      [username, password],
+      [email, cripted_pass],
       function (error, results, fields) {
-        // If there is an issue with the query, output the error
         if (error) throw error;
-        // If the account exists
         if (results.length > 0) {
-          // Authenticate the user
           req.session.loggedin = true;
-          req.session.username = username;
-          // Redirect to home page
+          req.session.username = email;
+
           res.redirect("/home");
         } else {
-          res.send("Incorrect Username and/or Password!");
+          res.send("Email ou Senha Incorretos!");
         }
         res.end();
       }
     );
   } else {
-    res.send("Please enter Username and Password!");
     res.end();
   }
 });
 
+app.post("/register", function (req, res) {
+  let username = req.body.nome;
+  let password = req.body.pass;
+  let email = req.body.email;
+  let cripted_pass = hash(email + password);
+
+  if (username && password && email) {
+    connection.query(
+      "INSERT INTO hamburgueria.usuario (nome, email, senha) VALUES(?, ?, ?);",
+      [username, email, cripted_pass],
+      function (error, results, fields) {
+        if (error) throw error;
+        console.log(results);
+        res.redirect("/");
+      }
+    );
+  } else {
+    res.send("Envie todas as credenciais!");
+    res.end();
+  }
+});
 app.listen(8080);
 console.log("Server is listening on port 8080");
+
+function hash(string) {
+  return createHash("sha256").update(string).digest("hex");
+}

@@ -43,14 +43,26 @@
         <button type="submit">Entrar</button>
       </form>
 
-      <form id="signup">
-        <input type="text" placeholder="Email" required />
+      <form id="signup" action="/register" method="post">
+        <input
+          type="text"
+          placeholder="Email"
+          required
+          name="email"
+          id="email"
+        />
         <i class="fas fa-envelope iEmail"></i>
 
-        <input type="text" placeholder="Nome" required />
+        <input type="text" placeholder="Nome" required name="nome" id="nome" />
         <i class="fas fa-solid fa-user iNome"></i>
 
-        <input type="password" placeholder="senha" required />
+        <input
+          type="password"
+          placeholder="senha"
+          required
+          name="pass"
+          id="pass"
+        />
         <i class="fas fa-lock iPassword"></i>
 
         <input type="password" placeholder="Confirmar senha" required />
