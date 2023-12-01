@@ -70,11 +70,11 @@ npm install express-session
 
 No repositório do projeto, possuimos uma pasta chamada /dumps_sql. Você irá abrir o arquivo dela com um editor de texto e irá copiar todo o conteúdo.
 Após isso, abra seu MySQL Worckbench e conecte no seu Local host
-![Criando conexão com Local Host](\imgs\create_cnn.png)
+![Criando conexão com Local Host](imgs/create_cnn.png)
 
 Insira as credencias de root e vá para a próxima tela.
 nessa nova tela, crie um novo arquivo sql./
-![Criando arquivo SQL](\imgs\create_sql.png)
+![Criando arquivo SQL](imgs/create_sql.png)
 Com o arquivo SQL criado, cole o código do dump.sql e execute tudo
 
 agora, ainda nessa tela, digite mais uma linha de código para liberar que seu root seja acessado pela biblioteca do node:
