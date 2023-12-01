@@ -4,7 +4,6 @@
 
 Certifique-se de ter os seguintes requisitos instalados antes de executar o código:
 
-<<<<<<< HEAD
 - [git](https://git-scm.com/downloads)
 - [node 18.18.0](https://nodejs.org/download/release/v18.19.0/)
 - [MySql Server + Workbench](https://dev.mysql.com/downloads/workbench/)
@@ -51,19 +50,7 @@ Agora apenas **lembre-se** de sempre atualizar o código antes de desenvolver. P
 
 ```bash
 git fetch #para atualizar as informações de atualizações no código
-git pull origin dev #aplicando as mudanças mapeadas no seu repositório local da branch dev
-=======
-- git
-- node 18.18.0
-- MySql Server
-
-## Passo 1: Clonar o Repositório
-
-Clone o repositório do projeto:
-
-```bash
-git clone https://github.com/GBRodrgues/hamburgueria.git
->>>>>>> cd1a1a4978e5e3f259d8552479da5a0298436960
+git pull origin dev #aplicando as mudanças mapeadas online no seu repositório local da branch dev
 ```
 
 ## Passo 2: Instalar Dependências
@@ -71,11 +58,6 @@ git clone https://github.com/GBRodrgues/hamburgueria.git
 Navegue até o diretório do projeto e instale as dependências:
 
 ```bash
-<<<<<<< HEAD
-
-=======
-cd hamburgueria
->>>>>>> cd1a1a4978e5e3f259d8552479da5a0298436960
 npm install # ou yarn install
 npm install ejs@3.1.6
 npm install express@4.17.1
@@ -83,7 +65,6 @@ npm install nodemon -g
 npm install express-session
 ```
 
-<<<<<<< HEAD
 ## Passo 3: Configurar banco de dados
 
 No repositório do projeto, possuimos uma pasta chamada /dumps_sql. Você irá abrir o arquivo dela com um editor de texto e irá copiar todo o conteúdo.
@@ -107,8 +88,6 @@ Commit; #para salvar as modificações
 No repositório, possuímos o arquivo json `connections_template.json`. Copie ele, e sem apagar a versão original, renomeie a cópia para `connections.json`. Dessa forma, iremos manter as credencias dos bancos mais seguras já que o arquivo sem o "template" não irá ser compartilhado pelo git.
 Altere as credenciais no arquivo json.
 
-=======
->>>>>>> cd1a1a4978e5e3f259d8552479da5a0298436960
 ## Passo 3: Executar o Código
 
 Execute o código principal:
@@ -118,13 +97,6 @@ npm start # ou yarn start
 ```
 
 ## Passo 4: Acessar pelo navegador as rotas
-<<<<<<< HEAD
-=======
-```sql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-```
-
->>>>>>> cd1a1a4978e5e3f259d8552479da5a0298436960
 
 [Página de Login](localhost:8080) - localhost:8080
 [Página Principal](localhost:8080/home) - localhost:8080/home
