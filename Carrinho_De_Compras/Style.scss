@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+    --main-color: #fe9307;
+    --second-color: #000;
+    --bg-color: #FFF;
+    --second-bg: #000000;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
+    --color-font: #FFF;
+}
+  
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    transition: all .2s linear;
+  }
+
+body{
+    background: whitesmoke;
+
+    > header{
+        padding: 20px 60px;
+        text-align: left;
+        h3{
+            margin: 0; /* Remove a margem padrão dos elementos h3 */
+            color: #fe9307;
+            padding: 1% 0px; 
+            .custom-stripe {
+                height: 3px; /* Altura da faixa */
+                background: linear-gradient(to right, #fe9307 50%, #eee 50%); /* Cores divididas pela metade */
+                /* Outras propriedades de estilo conforme necessário */
+            }
+        }
+        #usuario{
+            display: flex;
+            justify-content: end;
+          }
+          
+          #usuario img{
+            width: 20px;
+            margin: 1px 10px;
+          }
+    }
+    > main{
+        background-color: white;
+        padding: 0 30px 30px;
+        
+        .page-title{
+            font-size: 40px;
+            padding: 50px 0px;
+            text-align: center;
+        }
+        .content{
+            display: flex;
+    
+            section{
+                flex: 1;
+    
+            }
+            aside{
+                // background-color: red;
+                min-width: 250px;
+            }
+        }
+    }
+}
+
+button{
+    cursor: pointer;
+}
+
+
+
+table{
+    width: 100%;
+    border-collapse:collapse;
+
+    thead{
+        tr{
+            border-bottom: 3px solid #eee;
+            th{
+                text-align: left;
+                padding-bottom: 10px; 
+                text-transform: uppercase;
+                color: #666;
+            }
+        }
+    }
+    tbody{
+        tr{
+            border-bottom: 3px solid #eee;
+                &:last-child{
+                    border: 0px;
+                }
+            td{
+                padding: 30px 0px;
+
+            }
+        }
+
+    }
+}
+
+.product{
+    display: flex;
+    align-items: center;
+
+    img{
+        border-radius: 6px;
+    }
+    .info{
+        margin-left: 20px;
+        .name{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .category{
+            color: #666;
+        }
+    }
+}
+
+.qty{
+    background: #eee;
+    display: inline-flex;
+    padding: 0 0;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px;
+    span{
+        margin: 0 10px;
+    }
+
+    button{
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: 0;
+        padding: 0 10px;
+        font-size: 20px;
+        height: 100%;
+        
+        &:hover{
+            background: #ddd;
+        }
+    }
+}
+
+.remove{
+    background: #eeee;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+   
+    &:hover{
+        background: #ddd;
+    }
+
+}
+
+aside{
+    margin-left: 30px;
+    .box{
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        
+        background: #ddd;
+
+        header{
+            padding: 15px 20px;
+            font-size: 18px;
+            border-bottom: 1px solid #ccc;
+        }
+        .info{
+            padding: 20px;
+            > div{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            button{
+                color: black;
+                background: transparent;
+                border: 0;
+                display: flex;
+                align-items: center;
+                i{
+                    font-size: 18px;
+                }
+            }
+        }
+
+        footer{
+            padding: 15px 20px;
+            background: #ccc;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    >button{
+        border: 0;
+        padding: 15px  0px;
+        color: white;
+        background: black;
+        display: block;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 18px;
+        &:hover{
+            background-color: #fe9307;
+        }
+    }
+
+}
