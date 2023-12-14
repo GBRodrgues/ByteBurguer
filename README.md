@@ -98,5 +98,5 @@ npm start # ou yarn start
 
 ## Passo 4: Acessar pelo navegador as rotas
 
-[Página de Login](localhost:8080) - localhost:8080
-[Página Principal](localhost:8080/home) - localhost:8080/home
+- [Página de Login](localhost:8080) - localhost:8080
+- [Página Principal](localhost:8080/home) - localhost:8080/home
