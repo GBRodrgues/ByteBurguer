@@ -72,13 +72,28 @@ app.post("/register", function (req, res) {
   let cripted_pass = hash(email + password);
 
   if (username && password && email) {
+    // Verifica se o e-mail já está cadastrado
     connection.query(
-      "INSERT INTO hamburgueria.usuario (nome, email, senha) VALUES(?, ?, ?);",
-      [username, email, cripted_pass],
+      "SELECT * FROM hamburgueria.usuario WHERE email = ?",
+      [email],
       function (error, results, fields) {
         if (error) throw error;
-        console.log(results);
-        res.redirect("/");
+
+        if (results.length > 0) {
+          // O e-mail já está cadastrado
+          res.send("Este e-mail já está cadastrado. Por favor, escolha outro.");
+        } else {
+          // O e-mail não está cadastrado, então insere o novo usuário
+          connection.query(
+            "INSERT INTO hamburgueria.usuario (nome, email, senha) VALUES(?, ?, ?);",
+            [username, email, cripted_pass],
+            function (error, results, fields) {
+              if (error) throw error;
+              console.log(results);
+              res.redirect("/");
+            }
+          );
+        }
       }
     );
   } else {
@@ -86,6 +101,7 @@ app.post("/register", function (req, res) {
     res.end();
   }
 });
+
 app.listen(8080);
 console.log("Server is listening on port 8080");
 
