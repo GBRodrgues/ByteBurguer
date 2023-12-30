@@ -36,15 +36,20 @@ app.get("/home", function (req, res) {
 app.post("/auth", function (req, res) {
   let email = req.body.email;
   let password = req.body.senha;
+  console.log(email);
+  console.log(password);
   let cripted_pass = hash(email + password);
 
   if (email && password) {
     connection.query(
-      "SELECT * FROM usuario WHERE email = ? AND senha = ?",
-      [email, cripted_pass],
+      "SELECT * FROM usuario WHERE email = ?",
+      [email],
       function (error, results, fields) {
         if (error) throw error;
         if (results.length > 0) {
+          console.log(cripted_pass);
+          console.log(results.senha);
+
           req.session.loggedin = true;
           req.session.username = email;
 
@@ -62,7 +67,7 @@ app.post("/auth", function (req, res) {
 
 app.post("/register", function (req, res) {
   let username = req.body.nome;
-  let password = req.body.pass;
+  let password = req.body.senha;
   let email = req.body.email;
   let cripted_pass = hash(email + password);
 
