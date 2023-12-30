@@ -61,6 +61,7 @@ form {
   transition: 0.3s;
 }
 
+input[type="email"],
 input[type="text"],
 input[type="password"] {
   border: none;

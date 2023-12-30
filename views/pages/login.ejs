@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>ByteBurguer</title>
     <link rel="stylesheet" href="/css/login.css" type="text/css" />
     <script
       src="https://kit.fontawesome.com/cf6fa412bd.js"
@@ -23,7 +23,7 @@
         <input
           id="email"
           name="email"
-          type="text"
+          type="email"
           placeholder="Email"
           required
         />
@@ -45,11 +45,11 @@
 
       <form id="signup" action="/register" method="post">
         <input
-          type="text"
+          type="email"
           placeholder="Email"
           required
           name="email"
-          id="email"
+          id="signupEmail"
         />
         <i class="fas fa-envelope iEmail"></i>
 
@@ -60,12 +60,18 @@
           type="password"
           placeholder="senha"
           required
-          name="pass"
-          id="pass"
+          name="senha"
+          id="senha"
         />
         <i class="fas fa-lock iPassword"></i>
 
-        <input type="password" placeholder="Confirmar senha" required />
+        <input
+          type="password"
+          placeholder="senha"
+          required
+          name="senha"
+          id="senha"
+        />
         <i class="fas fa-lock iPassword2"></i>
 
         <button type="submit">Cadastrar</button>

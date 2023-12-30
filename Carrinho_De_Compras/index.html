@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script  async src="app.js"></script>
+    <title>Carrinho De Compras</title>
+</head>
+<body>
+    <header>
+        <h3>Finalizar Compra</h3>
+        <div id="usuario" class="titulo">
+            <img src="assets/do-utilizador.png" alt="">
+            <label class="nomeUsuario">Nome Do Usuário</label>
+        </div>
+        <div class="custom-stripe"></div>
+        <h3>Revisar Pedido</h3>
+    </header>
+    <main>
+        <div class="page-title">Seu Carrinho</div>
+        <div class="content">
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img style="width: 120px; height: 100px;" src="assets/bebida2.jpg" alt="">
+                                    <div class="info">
+                                        <div class="name">Nome Do Produto</div>
+                                        <div class="category">Categoria</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>R$2</td>
+                            <td>
+                                <div class="qty">
+                                    <button><i class='bx bx-minus'></i></button>
+                                    <span>0</span>
+                                    <button><i class='bx bx-plus'></i></button>
+                                </div>
+                            </td>
+                            <td>R$0</td>
+                            <td>
+                                <button class="remove"><i class='bx bx-x'></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img style="width: 120px; height: 100px;" src="assets/batata.jpeg" alt="">
+                                    <div class="info">
+                                        <div class="name">Nome Do Produto</div>
+                                        <div class="category">Categoria</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>R$0</td>
+                            <td>
+                                <div class="qty">
+                                    <button><i class='bx bx-minus'></i></button>
+                                    <span>0</span>
+                                    <button><i class='bx bx-plus'></i></button>
+                                </div>
+                            </td>
+                            <td>R$0</td>
+                            <td>
+                                <button class="remove"><i class='bx bx-x'></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img style="width: 120px; height: 100px;" src="assets/bebida4.jpg" alt="">
+                                    <div class="info">
+                                        <div class="name">Nome Do Produto</div>
+                                        <div class="category">Categoria</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>R$0</td>
+                            <td>
+                                <div class="qty">
+                                    <button><i class='bx bx-minus'></i></button>
+                                    <span>0</span>
+                                    <button><i class='bx bx-plus'></i></button>
+                                </div>
+                            </td>
+                            <td>R$0</td>
+                            <td>
+                                <button class="remove"><i class='bx bx-x'></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img style="width: 120px; height: 100px;" src="assets/combo.png" alt="">
+                                    <div class="info">
+                                        <div class="name">Nome Do Produto</div>
+                                        <div class="category">Categoria</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>R$0</td>
+                            <td>
+                                <div class="qty">
+                                    <button><i class='bx bx-minus'></i></button>
+                                    <span>0</span>
+                                    <button><i class='bx bx-plus'></i></button>
+                                </div>
+                            </td>
+                            <td>R$0</td>
+                            <td>
+                                <button class="remove"><i class='bx bx-x'></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <aside>
+                <div class="box">
+                    <header>Resumo Da Compra</header>
+                    <div class="info">
+                        <div><span>Sub-Total</span><span>R$ 0</span></div>
+                        <div><span>Frete</span><span> Gratuito</span></div>
+                        <div><button>Adicionar Cupom De Desconto<i class='bx bx-right-arrow-alt'></i></button></div>
+                    </div>
+                    <footer>
+                        <span>Total</span>
+                        <span>R$0</span>
+                    </footer>
+                </div>
+                <button>Finalizar Compra</button>
+                <button style="margin-top: 5px;">Voltar</button>
+            </aside>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

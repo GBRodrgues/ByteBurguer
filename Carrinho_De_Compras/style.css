@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: whitesmoke;
+}
+body > header {
+  color: black;
+  font-size: 24px;
+  padding: 20px 30px;
+  text-align: left;
+}
+
+h3{
+  margin: 0px;
+  color: #fe9307;
+  padding: 1% 0px;
+}
+
+.custom-stripe{
+  height: 3px;
+  background:linear-gradient(to right, #fe9307 50%, #eee 50%);
+}
+
+#usuario{
+  display: flex;
+  justify-content: end;
+}
+
+#usuario img{
+  width: 30px;
+  height: 30px;
+  margin: 1px 10px;
+}
+
+body > main {
+  background-color: white;
+  padding: 0 30px 30px;
+}
+body > main .page-title {
+  font-size: 40px;
+  padding: 50px 0px;
+  text-align: center;
+}
+body > main .content {
+  display: flex;
+}
+body > main .content section {
+  flex: 1;
+}
+body > main .content aside {
+  min-width: 250px;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table thead tr {
+  border-bottom: 3px solid #eee;
+}
+table thead tr th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #666;
+}
+table tbody tr {
+  border-bottom: 3px solid #eee;
+}
+table tbody tr:last-child {
+  border: 0px;
+}
+table tbody tr td {
+  padding: 30px 0px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+.product img {
+  border-radius: 6px;
+}
+.product .info {
+  margin-left: 20px;
+}
+.product .info .name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.product .info .category {
+  color: #666;
+}
+
+.qty {
+  background: #eee;
+  display: inline-flex;
+  padding: 0 0;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+}
+.qty span {
+  margin: 0 10px;
+}
+.qty button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  height: 100%;
+}
+.qty button:hover {
+  background: #ddd;
+}
+
+.remove {
+  background: rgba(238, 238, 238, 0.9333333333); 
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.remove:hover {
+  background: #ddd;
+}
+
+aside {
+  margin-left: 30px;
+}
+aside .box {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background: #ddd;
+}
+aside .box header {
+  padding: 15px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+aside .box .info {
+  padding: 20px;
+}
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+aside .box .info > div:last-child {
+  margin-bottom: 0;
+}
+aside .box .info button {
+  color: black;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+}
+aside .box .info button i {
+  font-size: 18px;
+}
+aside .box footer {
+  padding: 15px 20px;
+  background: #ccc;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+aside > button {
+  border: 0;
+  padding: 15px 0px;
+  color: white;
+  background: black;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+aside > button:hover {
+  background-color: #fe9307;
+}/*# sourceMappingURL=style.css.map */
