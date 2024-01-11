@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administração</title>
+
+    <!-- Importa a biblioteca de ícones Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Importa o arquivo de estilos CSS específico para a administração -->
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+
+  <body>
+    <!-- Cabeçalho da página -->
+    <header>
+      <!-- Logo e título do painel de administração -->
+      <a href="#" class="logo"
+        ><i class="fas fa-utensils"></i>Painel do Administrador</a
+      >
+
+      <!-- Barra de navegação (adicionar links específicos para o admin, se necessário) -->
+
+      <!-- Ícones ou links específicos para o admin podem ser adicionados aqui -->
+    </header>
+
+    <!-- Seção de conteúdo da administração -->
+    <section class="conteudo-admin">
+      <!-- Título e mensagem de boas-vindas -->
+      <h1>Bem-vindo(a), Administrador(a)!</h1>
+      <p>Aqui você pode gerenciar os produtos do cardápio.</p>
+
+      <!-- Tabela de produtos (será preenchida dinamicamente pela função carregarProdutos()) -->
+      <table id="tabelaProdutos" border="1">
+        <!-- Cabeçalho da tabela -->
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Valor</th>
+          <th>Imagem</th>
+          <th>Quantidade</th>
+          <th>Ações</th>
+        </tr>
+
+        <!-- Linhas da tabela preenchidas dinamicamente com dados de produtos -->
+        <% produtos.forEach(function (produto) { %>
+        <tr>
+          <td><%= produto.idProduto %></td>
+          <td><%= produto.nome %></td>
+          <td><%= produto.valor %></td>
+          <td><%= produto.imagem %></td>
+          <td><%= produto.quantidade %></td>
+          <td>
+            <!-- Botões de ação para editar e excluir produtos -->
+            <button onclick="editarProduto( produto.idProduto );">
+              Editar
+            </button>
+            <button onclick="excluirProduto( produto.idProduto );">
+              Excluir
+            </button>
+          </td>
+        </tr>
+        <% }); %>
+      </table>
+
+      <!-- Formulário para editar produto (inicialmente oculto) -->
+      <form id="formEditarProduto" style="display: none">
+        <h2>Editar Produto</h2>
+        <input type="hidden" id="editarIdProduto" name="idProduto" />
+        <!-- Campos para editar um produto -->
+        <label for="editarNome">Nome:</label>
+        <input type="text" id="editarNome" name="nome" required />
+
+        <label for="editarValor">Valor:</label>
+        <input type="text" id="editarValor" name="valor" required />
+
+        <!-- Adicione outros campos conforme necessário -->
+
+        <button type="submit">Salvar Edições</button>
+      </form>
+
+      <!-- Links para excluir produtos (serão preenchidos dinamicamente) -->
+      <div id="linksExcluirProdutos"></div>
+    </section>
+
+    <!-- Rodapé da página -->
+    <footer>
+      <!-- Conteúdo específico para o rodapé do admin, se necessário -->
+      <div class="credit">
+        Direitos autorais © 2023 por <span>Grupo ByteBurguer</span> | Todos os
+        direitos reservados.
+      </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="javascripts/admin.js"></script>
+    <!-- Adicione seu arquivo JavaScript específico para o painel de administração, se necessário -->
+
+    <!-- Chama a função carregarProdutos() quando a página for carregada -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        carregarProdutos();
+      });
+    </script>
+  </body>
+</html>
